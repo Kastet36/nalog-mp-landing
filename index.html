@@ -17,9 +17,18 @@
           <div class="logo" aria-label="NALOG.MP">
             NALOG<span class="logo__accent">.MP</span>
           </div>
-          <div class="header-phone" aria-label="Телефон">
-            <span class="phone-icon" aria-hidden="true"></span>
-            +7 (812) 214-88-84
+          <nav class="header-nav" aria-label="Навигация по лендингу">
+            <a href="#audit">Экспресс-аудит</a>
+            <a href="#price">Стоимость ведения</a>
+            <a href="#benefits">Преимущества</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+          <div class="header-actions">
+            <div class="header-phone" aria-label="Телефон">
+              <span class="phone-icon" aria-hidden="true"></span>
+              +7 (812) 214-88-84
+            </div>
+            <button class="header-cta" type="button">Получить аудит</button>
           </div>
         </div>
       </header>
@@ -50,25 +59,19 @@
                   <span class="proof-item__value">100+</span>
                   <span class="proof-item__label">селлеров на сопровождении</span>
                 </div>
-                <div class="proof-item proof-item--marketplaces">
-                  <span class="market-badge market-badge--wb">WB</span>
-                  <span class="market-badge market-badge--ozon">OZ</span>
-                  <span class="market-badge market-badge--ym">YM</span>
+                <div class="proof-item proof-item--channels">
+                  <span class="proof-item__label">Wildberries, Ozon, Яндекс Маркет</span>
                 </div>
               </div>
             </div>
 
             <div class="hero__visual" aria-hidden="true">
-              <div class="marketplace-stack">
-                <div class="marketplace-tile marketplace-tile--wb">wb</div>
-                <div class="marketplace-tile marketplace-tile--ozon">ozon</div>
-                <div class="marketplace-tile marketplace-tile--ym">м</div>
-              </div>
+              <img class="hero-object" src="hero-accounting-3d.png" alt="">
             </div>
           </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="benefits">
           <div class="container">
             <div class="section__head">
               <div>
@@ -103,7 +106,7 @@
           </div>
         </section>
 
-        <section class="section section--surface">
+        <section class="section section--surface" id="price">
           <div class="container">
             <div class="split">
               <div>
@@ -179,7 +182,7 @@
           </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="audit">
           <div class="container">
             <div class="section__head">
               <div>
@@ -511,20 +514,22 @@
           </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="contacts">
           <div class="container">
-            <div class="cta-panel">
+            <div class="cta-panel cta-panel--contacts">
               <div>
                 <span class="section__kicker section__kicker--success">Следующий шаг</span>
                 <h2 class="cta-panel__title">Проверьте учет до следующей отчетности</h2>
                 <p class="cta-panel__text">Оставьте заявку на бесплатный экспресс-аудит. Посмотрим один отчет маркетплейса и покажем, где учет можно сделать точнее.</p>
               </div>
-              <div class="lead-form" role="form" aria-label="Заявка на экспресс-аудит">
-                <input class="field" type="text" name="name" placeholder="Имя" autocomplete="name">
-                <input class="field" type="tel" name="phone" placeholder="Телефон" autocomplete="tel">
+              <div class="contact-actions">
                 <button class="button" type="button">Получить экспресс-аудит</button>
                 <button class="button button--ghost" type="button">Рассчитать стоимость сопровождения</button>
-                <p class="form-note">Оставьте телефон. Специалист свяжется с вами, уточнит площадку и подскажет, какой отчет прислать для аудита.</p>
+                <div class="contact-phone">
+                  <span>Телефон</span>
+                  <strong>+7 (812) 214-88-84</strong>
+                </div>
+                <p class="form-note">Формы заявки будут открываться в попапах.</p>
               </div>
             </div>
           </div>
