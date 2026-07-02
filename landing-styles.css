@@ -380,25 +380,24 @@ select {
 }
 
 .offer-card {
-  width: min(100%, 640px);
-  margin-top: 20px;
-  padding: 16px 20px;
-  border: 1px solid rgba(239, 26, 100, 0.28);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.74);
-  box-shadow: 0 20px 70px rgba(132, 37, 216, 0.09);
+  width: min(100%, 720px);
+  margin-top: 18px;
+  padding: 14px 0 14px 20px;
+  border-left: 4px solid var(--pink);
+  background: linear-gradient(90deg, rgba(239, 26, 100, 0.08), rgba(255, 255, 255, 0));
 }
 
 .offer-card__label {
   margin: 0;
   color: var(--text);
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 800;
   line-height: 1.18;
 }
 
 .offer-card__text {
   margin: 8px 0 0;
+  max-width: 680px;
   color: var(--text-soft);
   font-size: 17px;
   line-height: 1.32;
@@ -1444,11 +1443,11 @@ select {
   }
 
   .offer-card {
-    padding: 20px;
+    padding: 14px 0 14px 18px;
   }
 
   .offer-card__label {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .offer-card__text {
