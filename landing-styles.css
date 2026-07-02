@@ -96,7 +96,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 28px;
 }
 
 .logo {
@@ -123,6 +123,65 @@ select {
   font-size: 18px;
   font-weight: 500;
   white-space: nowrap;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-left: auto;
+  color: #222222;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.header-nav a {
+  position: relative;
+  padding: 10px 0;
+}
+
+.header-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--gradient-main);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.header-nav a:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.header-cta {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--gradient-main);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(239, 26, 100, 0.18);
 }
 
 .phone-icon {
@@ -319,6 +378,13 @@ select {
   filter: drop-shadow(var(--shadow-hero));
 }
 
+.hero-object {
+  width: min(100%, 640px);
+  transform: translate(2%, 4%) rotate(-1deg);
+  filter: drop-shadow(0 34px 90px rgba(132, 37, 216, 0.2));
+  mix-blend-mode: multiply;
+}
+
 .marketplace-tile {
   position: absolute;
   display: grid;
@@ -456,6 +522,16 @@ select {
 
 .market-badge--ym {
   background: #ff4a22;
+}
+
+.proof-item--channels {
+  min-width: 230px;
+  padding-left: 28px;
+  border-left: 1px solid var(--line);
+}
+
+.proof-item--channels .proof-item__label {
+  max-width: 230px;
 }
 
 .avatar-stack {
@@ -962,6 +1038,10 @@ select {
     #ffffff;
 }
 
+.cta-panel--contacts {
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.58fr);
+}
+
 .cta-panel__text {
   margin: 22px 0 0;
   max-width: 680px;
@@ -996,6 +1076,33 @@ select {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.35;
+}
+
+.contact-actions {
+  display: grid;
+  gap: 14px;
+}
+
+.contact-phone {
+  margin-top: 8px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface-soft);
+}
+
+.contact-phone span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.contact-phone strong {
+  display: block;
+  color: var(--text);
+  font-size: 25px;
+  line-height: 1.1;
 }
 
 .footer {
@@ -1236,6 +1343,19 @@ select {
     --section-y: 82px;
   }
 
+  .site-header__inner {
+    flex-wrap: wrap;
+    padding: 14px 0;
+  }
+
+  .header-nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
   .hero__inner,
   .split,
   .section__head,
@@ -1297,9 +1417,20 @@ select {
     font-size: 0;
   }
 
-  .header-phone svg {
-    width: 24px;
-    height: 24px;
+  .header-actions {
+    margin-left: auto;
+    gap: 12px;
+  }
+
+  .header-cta {
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 14px;
+  }
+
+  .header-nav {
+    gap: 20px;
+    font-size: 15px;
   }
 
   .hero {
@@ -1333,6 +1464,11 @@ select {
 
   .marketplace-stack {
     width: min(100%, 360px);
+  }
+
+  .hero-object {
+    width: min(100%, 400px);
+    transform: none;
   }
 
   .section__head {
