@@ -338,7 +338,7 @@ select {
   display: grid;
   grid-template-columns: minmax(0, 1.06fr) minmax(420px, 0.82fr);
   gap: 44px;
-  align-items: center;
+  align-items: start;
 }
 
 .hero__content {
@@ -372,7 +372,7 @@ select {
 }
 
 .hero__offer {
-  margin-top: 24px;
+  margin-top: 28px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -381,8 +381,8 @@ select {
 
 .offer-card {
   width: min(100%, 640px);
-  margin-top: 24px;
-  padding: 18px 22px;
+  margin-top: 20px;
+  padding: 16px 20px;
   border: 1px solid rgba(239, 26, 100, 0.28);
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.74);
@@ -392,7 +392,7 @@ select {
 .offer-card__label {
   margin: 0;
   color: var(--text);
-  font-size: 21px;
+  font-size: 20px;
   font-weight: 800;
   line-height: 1.18;
 }
@@ -409,11 +409,12 @@ select {
   min-height: 440px;
   display: grid;
   place-items: center;
+  padding-top: 34px;
 }
 
 .hero-object {
   width: min(100%, 620px);
-  transform: translate(1%, 2%) rotate(-1deg);
+  transform: translate(1%, -8%) rotate(-1deg);
   filter: drop-shadow(0 34px 90px rgba(132, 37, 216, 0.2));
 }
 
