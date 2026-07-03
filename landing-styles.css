@@ -778,10 +778,6 @@ select {
   padding: 42px;
 }
 
-.audit-panel--compact {
-  align-items: center;
-}
-
 .audit-panel__title,
 .price-panel__title,
 .cta-panel__title {
@@ -802,15 +798,6 @@ select {
 
 .audit-panel .button {
   margin-top: 30px;
-}
-
-.audit-panel__action {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.audit-panel__action .button {
-  margin-top: 0;
 }
 
 .audit-list {
@@ -1027,28 +1014,6 @@ select {
 .contact-actions {
   display: grid;
   gap: 14px;
-}
-
-.contact-phone {
-  margin-top: 8px;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  background: var(--surface-soft);
-}
-
-.contact-phone span {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.contact-phone strong {
-  display: block;
-  color: var(--text);
-  font-size: 25px;
-  line-height: 1.1;
 }
 
 .footer {
@@ -1317,14 +1282,6 @@ select {
 
   .price-panel__head {
     grid-template-columns: 1fr;
-  }
-
-  .audit-panel__action {
-    justify-content: flex-start;
-  }
-
-  .audit-panel__action .button {
-    margin-top: 30px;
   }
 
   .service-item--wide {
