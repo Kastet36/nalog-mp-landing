@@ -489,16 +489,6 @@ select {
   line-height: 1.05;
 }
 
-.proof-item--channels {
-  min-width: 230px;
-  padding-left: 28px;
-  border-left: 1px solid var(--line);
-}
-
-.proof-item--channels .proof-item__label {
-  max-width: 230px;
-}
-
 .avatar-stack {
   display: flex;
   align-items: center;
