@@ -9,6 +9,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="landing-styles.css">
+    <script>
+      (function(w, d, s, o) {
+        var j = d.createElement(s);
+        j.async = true;
+        j.src = "//script.marquiz.ru/v2.js";
+        j.onload = function() {
+          if (document.readyState !== "loading") {
+            Marquiz.init(o);
+          } else {
+            document.addEventListener("DOMContentLoaded", function() {
+              Marquiz.init(o);
+            });
+          }
+        };
+        d.head.insertBefore(j, d.head.firstElementChild);
+      })(window, document, "script", {
+        host: "//quiz.marquiz.ru",
+        region: "eu",
+        id: "63e20e52a1e2f9004f1db08f",
+        autoOpen: false,
+        autoOpenFreq: "once",
+        openOnExit: false,
+        disableOnMobile: false
+      });
+    </script>
   </head>
   <body>
     <div class="page">
@@ -240,9 +265,9 @@
             <div class="section__head">
               <div>
                 <span class="section__kicker section__kicker--success">Сопровождение</span>
-                <h2 class="section__title">Берем учет селлера под ключ</h2>
+                <h2 class="section__title">Берем на себя весь учет селлера</h2>
               </div>
-              <p class="section__lead">Регулярно ведем бухгалтерию, сверяем данные и держим учет готовым к отчетности.</p>
+              <p class="section__lead">Ежемесячно сверяем данные площадок и держим учет в порядке для отчетности.</p>
             </div>
 
             <div class="service-board">
@@ -365,7 +390,7 @@
               </div>
 
               <div class="panel-action">
-                <button class="button" type="button">Рассчитать стоимость сопровождения</button>
+                <a class="button" href="#popup:marquiz_698ad8cf0ce5f40019922be2">Рассчитать стоимость сопровождения</a>
                 <p>Ответьте на 4 вопроса. Мы оценим объем учета и предложим формат сопровождения.</p>
               </div>
             </div>
