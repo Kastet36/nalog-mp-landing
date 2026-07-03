@@ -778,8 +778,8 @@ select {
   padding: 42px;
 }
 
-.audit-panel--solo {
-  grid-template-columns: minmax(0, 760px);
+.audit-panel--compact {
+  align-items: center;
 }
 
 .audit-panel__title,
@@ -802,6 +802,15 @@ select {
 
 .audit-panel .button {
   margin-top: 30px;
+}
+
+.audit-panel__action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.audit-panel__action .button {
+  margin-top: 0;
 }
 
 .audit-list {
@@ -1308,6 +1317,14 @@ select {
 
   .price-panel__head {
     grid-template-columns: 1fr;
+  }
+
+  .audit-panel__action {
+    justify-content: flex-start;
+  }
+
+  .audit-panel__action .button {
+    margin-top: 30px;
   }
 
   .service-item--wide {
