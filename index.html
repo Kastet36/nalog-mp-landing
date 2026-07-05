@@ -76,7 +76,7 @@
         <section class="hero">
           <div class="container hero__inner">
             <div class="hero__content">
-              <h1 class="hero__title">Бухгалтерия для продавцов на маркетплейсах</h1>
+              <h1 class="hero__title">Бухгалтерия для продавцов на <span class="hero__typewriter" aria-live="polite"><span class="hero__typewriter-text">Ozon</span></span></h1>
               <p class="hero__text">Оборот в кабинете, выплата на счет и налоговая база часто расходятся. Разбираем отчеты WB, Ozon и Яндекс Маркета до копейки. Учитываем каждую комиссию, возврат и удержание. Ведем учет и сдаем отчетность вовремя.</p>
 
               <div class="hero__offer">
@@ -510,6 +510,44 @@
     <div class="copy-toast" role="status" aria-live="polite">Телефон скопирован</div>
     <script>
       (function() {
+        var textNode = document.querySelector(".hero__typewriter-text");
+        if (textNode) {
+          var words = ["Ozon", "Wildberries", "Яндекс.Маркет"];
+          var wordIndex = 0;
+          var charIndex = 0;
+          var isDeleting = false;
+
+          (function tick() {
+            var currentWord = words[wordIndex];
+
+            if (!isDeleting) {
+              charIndex += 1;
+              textNode.textContent = currentWord.slice(0, charIndex);
+
+              if (charIndex === currentWord.length) {
+                isDeleting = true;
+                setTimeout(tick, 1300);
+                return;
+              }
+
+              setTimeout(tick, 95);
+              return;
+            }
+
+            charIndex -= 1;
+            textNode.textContent = currentWord.slice(0, Math.max(0, charIndex));
+
+            if (charIndex === 0) {
+              isDeleting = false;
+              wordIndex = (wordIndex + 1) % words.length;
+              setTimeout(tick, 260);
+              return;
+            }
+
+            setTimeout(tick, 55);
+          })();
+        }
+
         var phoneLink = document.querySelector(".header-phone[data-copy-phone]");
         var toast = document.querySelector(".copy-toast");
         var mobileQuery = window.matchMedia("(max-width: 820px)");
