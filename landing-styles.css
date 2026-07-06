@@ -49,6 +49,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 img,
 svg,
 video {
@@ -268,6 +272,81 @@ select {
 .copy-toast--visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.audit-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.audit-modal--open {
+  display: flex;
+}
+
+.audit-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 8, 8, 0.62);
+  backdrop-filter: blur(8px);
+}
+
+.audit-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 760px);
+  max-height: calc(100vh - 48px);
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  box-shadow: 0 28px 90px rgba(8, 8, 8, 0.32);
+}
+
+.audit-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #ffffff;
+  color: #111111;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.audit-modal__close:hover {
+  color: var(--pink);
+}
+
+.audit-modal__title {
+  margin: 0;
+  padding: 28px 74px 20px 28px;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.audit-modal__frame-wrap {
+  height: min(720px, calc(100vh - 150px));
+  min-height: 520px;
+}
+
+.audit-modal__frame {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
 }
 
 .section--tight {
@@ -1567,6 +1646,24 @@ select {
   .faq-item__body {
     padding: 0 18px 20px;
   }
+
+  .audit-modal {
+    padding: 14px;
+  }
+
+  .audit-modal__dialog {
+    max-height: calc(100vh - 28px);
+  }
+
+  .audit-modal__title {
+    padding: 22px 66px 16px 20px;
+    font-size: 22px;
+  }
+
+  .audit-modal__frame-wrap {
+    height: calc(100vh - 118px);
+    min-height: 420px;
+  }
 }
 
 @media (max-width: 460px) {
@@ -1591,5 +1688,9 @@ select {
   .cta-panel {
     margin-left: -2px;
     margin-right: -2px;
+  }
+
+  .audit-modal__frame-wrap {
+    min-height: 360px;
   }
 }
