@@ -508,6 +508,16 @@
         </div>
       </footer>
     </div>
+    <div class="audit-modal" id="audit-modal" aria-hidden="true">
+      <div class="audit-modal__overlay" data-audit-modal-close></div>
+      <div class="audit-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="audit-modal-title">
+        <button class="audit-modal__close" type="button" aria-label="Закрыть форму" data-audit-modal-close>×</button>
+        <h2 class="audit-modal__title" id="audit-modal-title">Получить экспресс-аудит</h2>
+        <div class="audit-modal__frame-wrap">
+          <iframe class="audit-modal__frame" src="https://nalogtaxi.bitrix24site.ru/crm_form_wmsgw/" title="Форма заявки на экспресс-аудит" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
     <div class="copy-toast" role="status" aria-live="polite">Телефон скопирован</div>
     <script>
       (function() {
@@ -586,6 +596,43 @@
             copyText(phoneLink.dataset.copyPhone).then(showToast);
           });
         }
+
+        var auditModal = document.getElementById("audit-modal");
+        var auditButtons = Array.prototype.slice.call(document.querySelectorAll("button, a")).filter(function(element) {
+          return element.textContent.trim() === "Получить экспресс-аудит";
+        });
+        var closeAuditModalButtons = document.querySelectorAll("[data-audit-modal-close]");
+
+        function openAuditModal() {
+          if (!auditModal) return;
+          auditModal.classList.add("audit-modal--open");
+          auditModal.setAttribute("aria-hidden", "false");
+          document.body.classList.add("modal-open");
+          var closeButton = auditModal.querySelector(".audit-modal__close");
+          if (closeButton) closeButton.focus();
+        }
+
+        function closeAuditModal() {
+          if (!auditModal) return;
+          auditModal.classList.remove("audit-modal--open");
+          auditModal.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("modal-open");
+        }
+
+        auditButtons.forEach(function(button) {
+          button.addEventListener("click", function(event) {
+            event.preventDefault();
+            openAuditModal();
+          });
+        });
+
+        closeAuditModalButtons.forEach(function(button) {
+          button.addEventListener("click", closeAuditModal);
+        });
+
+        document.addEventListener("keydown", function(event) {
+          if (event.key === "Escape") closeAuditModal();
+        });
       })();
     </script>
   </body>
