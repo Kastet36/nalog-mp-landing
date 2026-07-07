@@ -329,7 +329,7 @@ select {
 }
 
 .audit-modal__frame-wrap {
-  height: min(560px, calc(100vh - 72px));
+  height: min(660px, calc(100vh - 72px));
   min-height: 0;
 }
 
@@ -1649,7 +1649,7 @@ select {
   }
 
   .audit-modal__frame-wrap {
-    height: 540px;
+    height: 620px;
     min-height: 0;
   }
 }
@@ -1679,6 +1679,6 @@ select {
   }
 
   .audit-modal__frame-wrap {
-    height: 520px;
+    height: 600px;
   }
 }
