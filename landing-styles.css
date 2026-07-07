@@ -298,7 +298,7 @@ select {
 .audit-modal__dialog {
   position: relative;
   z-index: 1;
-  width: min(100%, 680px);
+  width: min(100%, 560px);
   max-height: calc(100vh - 48px);
   overflow: hidden;
   border-radius: var(--radius-lg);
@@ -329,8 +329,8 @@ select {
 }
 
 .audit-modal__frame-wrap {
-  height: min(620px, calc(100vh - 72px));
-  min-height: 560px;
+  height: min(560px, calc(100vh - 72px));
+  min-height: 0;
 }
 
 .audit-modal__frame {
@@ -1639,16 +1639,18 @@ select {
   }
 
   .audit-modal {
-    padding: 14px;
+    align-items: flex-start;
+    padding: 18px 14px;
   }
 
   .audit-modal__dialog {
-    max-height: calc(100vh - 28px);
+    width: min(100%, 380px);
+    max-height: none;
   }
 
   .audit-modal__frame-wrap {
-    height: calc(100vh - 28px);
-    min-height: 420px;
+    height: 540px;
+    min-height: 0;
   }
 }
 
@@ -1677,6 +1679,6 @@ select {
   }
 
   .audit-modal__frame-wrap {
-    min-height: 360px;
+    height: 520px;
   }
 }
