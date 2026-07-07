@@ -517,6 +517,15 @@
         </div>
       </div>
     </div>
+    <div class="audit-modal" id="question-modal" aria-hidden="true">
+      <div class="audit-modal__overlay" data-modal-close></div>
+      <div class="audit-modal__dialog" role="dialog" aria-modal="true" aria-label="Форма вопроса">
+        <button class="audit-modal__close" type="button" aria-label="Закрыть форму" data-modal-close>×</button>
+        <div class="audit-modal__frame-wrap">
+          <iframe class="audit-modal__frame" src="https://nalogtaxi.bitrix24site.ru/crm_form_jf7t0/" title="Форма вопроса" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
     <div class="copy-toast" role="status" aria-live="polite">Телефон скопирован</div>
     <script>
       (function() {
@@ -597,40 +606,68 @@
         }
 
         var auditModal = document.getElementById("audit-modal");
+        var questionModal = document.getElementById("question-modal");
         var auditButtons = Array.prototype.slice.call(document.querySelectorAll("button, a")).filter(function(element) {
           return element.textContent.trim() === "Получить экспресс-аудит";
         });
+        var questionButtons = Array.prototype.slice.call(document.querySelectorAll("button, a")).filter(function(element) {
+          return element.textContent.trim() === "Задать вопрос";
+        });
         var closeAuditModalButtons = document.querySelectorAll("[data-audit-modal-close]");
+        var closeModalButtons = document.querySelectorAll("[data-modal-close]");
 
-        function openAuditModal() {
-          if (!auditModal) return;
-          auditModal.classList.add("audit-modal--open");
-          auditModal.setAttribute("aria-hidden", "false");
+        function openModal(modal) {
+          if (!modal) return;
+          modal.classList.add("audit-modal--open");
+          modal.setAttribute("aria-hidden", "false");
           document.body.classList.add("modal-open");
-          var closeButton = auditModal.querySelector(".audit-modal__close");
+          var closeButton = modal.querySelector(".audit-modal__close");
           if (closeButton) closeButton.focus();
         }
 
-        function closeAuditModal() {
-          if (!auditModal) return;
-          auditModal.classList.remove("audit-modal--open");
-          auditModal.setAttribute("aria-hidden", "true");
+        function closeModal(modal) {
+          if (!modal) return;
+          modal.classList.remove("audit-modal--open");
+          modal.setAttribute("aria-hidden", "true");
+          if (!document.querySelector(".audit-modal--open")) {
+            document.body.classList.remove("modal-open");
+          }
+        }
+
+        function closeAllModals() {
+          closeModal(auditModal);
+          closeModal(questionModal);
           document.body.classList.remove("modal-open");
         }
 
         auditButtons.forEach(function(button) {
           button.addEventListener("click", function(event) {
             event.preventDefault();
-            openAuditModal();
+            openModal(auditModal);
+          });
+        });
+
+        questionButtons.forEach(function(button) {
+          button.addEventListener("click", function(event) {
+            event.preventDefault();
+            openModal(questionModal);
           });
         });
 
         closeAuditModalButtons.forEach(function(button) {
-          button.addEventListener("click", closeAuditModal);
+          button.addEventListener("click", function() {
+            closeModal(auditModal);
+          });
+        });
+
+        closeModalButtons.forEach(function(button) {
+          button.addEventListener("click", function() {
+            closeModal(questionModal);
+          });
         });
 
         document.addEventListener("keydown", function(event) {
-          if (event.key === "Escape") closeAuditModal();
+          if (event.key === "Escape") closeAllModals();
         });
       })();
     </script>
