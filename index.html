@@ -531,7 +531,9 @@
       (function() {
         var textNode = document.querySelector(".hero__typewriter-text");
         if (textNode) {
-          var words = ["Ozon", "Wildberries", "Яндекс.Маркет"];
+          var words = window.matchMedia("(max-width: 820px)").matches
+            ? ["Ozon", "Wildberries", "Я.Маркет"]
+            : ["Ozon", "Wildberries", "Яндекс.Маркет"];
           var wordIndex = 0;
           var charIndex = 0;
           var isDeleting = false;
