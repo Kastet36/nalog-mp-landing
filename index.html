@@ -642,9 +642,12 @@
           document.body.classList.remove("modal-open");
         }
 
-        auditButtons.forEach(function(button) {
+        auditButtons.forEach(function(button, index) {
           button.addEventListener("click", function(event) {
             event.preventDefault();
+            if (typeof ym === "function") {
+              ym(106349818, "reachGoal", "click_polucit_audit_" + (index + 1));
+            }
             openModal(auditModal);
           });
         });
